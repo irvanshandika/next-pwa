@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "May Beauty Skin",
-  "short_name": "May Beauty Skin",
-  "description": "Toko Anda Mahasiswa Untuk Kecantikan",
+  "name": "Next PWA Example",
+  "short_name": "Next PWA",
+  "description": "A simple example of how to use the next-pwa plugin",
   "icons": [
     {
       "src": "/logo192.png",
