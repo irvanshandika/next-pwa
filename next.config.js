@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")({
-  dest: "public",
-});
-
-module.exports = withPWA({
-  // next.js config
+const withPWA = require("next-pwa");
+const nextConfig = {
   output: "export",
   images: {
     unoptimized: true,
   },
-});
+  ...withPWA({
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  }),
+};
+
+module.exports = nextConfig;
