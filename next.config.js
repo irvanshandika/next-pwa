@@ -9,6 +9,7 @@ const nextConfig = {
     dest: "public",
     register: true,
     skipWaiting: true,
+    startUrl: "/",
   }),
 };
 
