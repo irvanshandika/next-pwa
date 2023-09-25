@@ -3,25 +3,35 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const APP_NAME = "PWA App";
+const APP_DEFAULT_TITLE = "My Awesome PWA App";
+const APP_TITLE_TEMPLATE = "%s - PWA App";
+const APP_DESCRIPTION = "Best PWA app in the world!";
 
 export const metadata: Metadata = {
-  title: "Next PWA",
-  description: "Next.js PWA with TypeScript, Tailwind CSS, and Preact",
+  applicationName: APP_NAME,
+  title: {
+    default: APP_DEFAULT_TITLE,
+    template: APP_TITLE_TEMPLATE,
+  },
+  description: APP_DESCRIPTION,
   manifest: "/manifest.json",
-  authors: [{ name: "Muhammad Irvan Shandika" }],
-  themeColor: { color: "#FFF" },
-  icons: { icon: "/icon-192x192.png", apple: "/icon-192x192.png" },
+  themeColor: "#FFFFFF",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_DEFAULT_TITLE,
+    // startUpImage: [],
+  },
+  formatDetection: {
+    telephone: false,
+  },
   viewport: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
-        <meta property="og:title" content="Next PWA" />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
