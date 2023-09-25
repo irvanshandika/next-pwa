@@ -8,6 +8,10 @@ const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require("next/const
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = (phase) => {
